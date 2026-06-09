@@ -153,4 +153,4 @@ dependencies:
 
 ## Lisensi
 
-Proyek ini dibuat untuk keperluan akademik dalam rangka tugas mata kuliah **Teknologi Aplikasi**, Program Studi Informatika, Universitas Pembangunan Nasional "Veteran" Jawa Timur.
+Proyek ini dibuat untuk keperluan akademik dalam rangka tugas mata kuliah **Pemograman Mobile**, Program Studi Sistem Informasi, Universitas Pembangunan Nasional "Veteran" Jawa Timur.
