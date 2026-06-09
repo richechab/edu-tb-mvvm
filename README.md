@@ -3,7 +3,7 @@ EduTB is a Flutter-based application for tuberculosis (TB) education and early d
 # EduTB — Aplikasi Edukasi & Deteksi Dini Tuberkulosis
 
 > **COTD with Flutter — Pertemuan 12 | Tahap 3: Source Code Refactoring (MVVM)**
-> Mata Kuliah: Teknologi Aplikasi | Semester Genap 2025/2026
+> Mata Kuliah: Pemograman Mobile | Semester Genap 2025/2026
 > Universitas Pembangunan Nasional "Veteran" Jawa Timur
 
 ---
@@ -12,7 +12,7 @@ EduTB is a Flutter-based application for tuberculosis (TB) education and early d
 
 | Nama | NPM |
 |------|-----|
-| Richechab | ((23082010042)) |
+| Riche Chalimul H.| 23082010042 |
 
 
 ---
