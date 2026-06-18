@@ -2,10 +2,6 @@
 EduTB is a Flutter-based application for tuberculosis (TB) education and early detection. This project implements the MVVM (Model-View-ViewModel) architecture pattern to improve code maintainability, scalability, and separation of concerns. Features include authentication, TB education, consultation, medical history, health facility location.
 # EduTB — Aplikasi Edukasi & Deteksi Dini Tuberkulosis
 
-> **COTD with Flutter — Pertemuan 12 | Tahap 3: Source Code Refactoring (MVVM)**
-> Mata Kuliah: Pemograman Mobile | Semester Genap 2025/2026
-> Universitas Pembangunan Nasional "Veteran" Jawa Timur
-
 ---
 
 ## Informasi
@@ -151,6 +147,4 @@ dependencies:
 
 ---
 
-## Lisensi
-
-Proyek ini dibuat untuk keperluan akademik dalam rangka tugas mata kuliah **Pemograman Mobile**, Program Studi Sistem Informasi, Universitas Pembangunan Nasional "Veteran" Jawa Timur.
+.
