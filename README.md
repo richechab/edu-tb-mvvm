@@ -141,9 +141,9 @@ dependencies:
 
 | Tahap | Deskripsi | Status |
 |-------|-----------|--------|
-| Tahap 1 | User Interface (UI) & Model Preparation | ✅ Selesai |
-| Tahap 2 | UI Navigation | ✅ Selesai |
-| Tahap 3 | Source Code Refactoring (MVVM) | ✅ Selesai |
+| Tahap 1 | User Interface (UI) & Model Preparation | ✓ Selesai |
+| Tahap 2 | UI Navigation | ✓ Selesai |
+| Tahap 3 | Source Code Refactoring (MVVM) | ✓ Selesai |
 
 ---
 
