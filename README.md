@@ -235,28 +235,3 @@ screenshots/
 ```
 ```md
 ---
-
-## Riwayat Pengembangan
-
-| Tahap | Deskripsi | Status |
-|--------|------------|--------|
-| Tahap 1 | User Interface (UI) dan Model Preparation | ✅ Selesai |
-| Tahap 2 | Navigation dan Integrasi Halaman | ✅ Selesai |
-| Tahap 3 | Refactoring Menggunakan MVVM | ✅ Selesai |
-| Tahap 4 | Integrasi Firebase dan Penyempurnaan Fitur | ✅ Selesai |
-
----
-
-## Repository
-
-GitHub Repository:
-
-https://github.com/richechab/edu-tb-mvvm
-
----
-
-## License
-
-Project ini dikembangkan untuk keperluan pembelajaran dan tugas mata kuliah Pemrograman Mobile.
-
-© 2025 Riche Chalimul Habibah
