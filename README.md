@@ -233,9 +233,6 @@ screenshots/
 ├── history.png
 └── maps.png
 ```
-
-Kemudian tampilkan pada README:
-
 ```md
 ## Screenshot
 
