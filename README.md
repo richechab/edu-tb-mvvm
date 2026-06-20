@@ -1,41 +1,73 @@
-# edu-tb-mvvm
-EduTB is a Flutter-based application for tuberculosis (TB) education and early detection. This project implements the MVVM (Model-View-ViewModel) architecture pattern to improve code maintainability, scalability, and separation of concerns. Features include authentication, TB education, consultation, medical history, health facility location.
-# EduTB — Aplikasi Edukasi & Deteksi Dini Tuberkulosis
+# EduTB - Aplikasi Edukasi & Deteksi Dini Tuberkulosis
 
-## Informasi
+EduTB merupakan aplikasi mobile berbasis Flutter yang dirancang untuk membantu masyarakat memperoleh edukasi mengenai Tuberkulosis (TB) serta melakukan deteksi dini gejala TB secara mandiri. Aplikasi ini menyediakan informasi kesehatan yang mudah diakses, fitur konsultasi, pencatatan riwayat kesehatan, dan pencarian fasilitas kesehatan terdekat.
+
+Proyek ini telah direfaktor menggunakan pola arsitektur MVVM (Model-View-ViewModel) untuk meningkatkan maintainability, scalability, serta pemisahan tanggung jawab antara tampilan dan logika bisnis.
+
+---
+
+## Informasi Mahasiswa
 
 | Nama | NPM |
-|------|-----|
-| Riche Chalimul H.| 23082010042 |
+|------|------|
+| Riche Chalimul Habibah | 23082010042 |
+
+---
 
 ## Deskripsi Aplikasi
 
-**EduTB** adalah aplikasi mobile berbasis Flutter yang dirancang untuk membantu masyarakat dalam memperoleh edukasi mengenai penyakit **Tuberkulosis (TB)** serta melakukan **deteksi dini** gejala TB secara mandiri. Aplikasi ini ditujukan sebagai media informasi kesehatan yang mudah diakses, sehingga pengguna dapat memahami gejala, pencegahan, dan penanganan TB dengan lebih baik.
+Tuberkulosis (TB) merupakan salah satu penyakit menular yang masih menjadi masalah kesehatan di Indonesia. Kurangnya informasi dan keterlambatan deteksi sering menyebabkan penanganan yang tidak optimal.
 
-Pada tahap ini, proyek telah direfaktor menggunakan **pola arsitektur MVVM (Model-View-ViewModel)** untuk meningkatkan keterbacaan kode, skalabilitas, serta pemisahan logika bisnis dari tampilan antarmuka.
+EduTB hadir sebagai solusi digital yang membantu pengguna untuk:
+
+- Memahami informasi mengenai Tuberkulosis.
+- Mengenali gejala awal TB melalui fitur deteksi dini.
+- Menyimpan riwayat kesehatan pengguna.
+- Melakukan konsultasi terkait kesehatan TB.
+- Menemukan fasilitas kesehatan terdekat yang menangani TB.
+
+---
 
 ## Fitur Utama
 
 | No | Fitur | Deskripsi |
-|----|-------|-----------|
-| 1 | **Autentikasi** | Registrasi dan login pengguna menggunakan Firebase Authentication |
-| 2 | **Edukasi TB** | Konten informatif seputar penyakit TB: pengertian, gejala, pencegahan, dan pengobatan |
-| 3 | **Konsultasi** | Fitur tanya jawab/konsultasi seputar kesehatan TB dengan tenaga medis atau chatbot |
-| 4 | **Riwayat Kesehatan** | Pencatatan dan riwayat hasil pemeriksaan atau konsultasi pengguna |
-| 5 | **Lokasi Fasilitas Kesehatan** | Peta lokasi puskesmas dan rumah sakit terdekat yang menangani TB |
+|----|--------|------------|
+| 1 | Autentikasi | Registrasi dan login pengguna menggunakan Firebase Authentication |
+| 2 | Edukasi TB | Informasi mengenai pengertian, gejala, pencegahan, dan pengobatan TB |
+| 3 | Deteksi Dini TB | Screening awal berdasarkan gejala yang diinput pengguna |
+| 4 | Konsultasi | Fitur konsultasi terkait informasi dan gejala Tuberkulosis |
+| 5 | Riwayat Kesehatan | Penyimpanan data hasil konsultasi dan pemeriksaan pengguna |
+| 6 | Lokasi Fasilitas Kesehatan | Menampilkan lokasi rumah sakit dan puskesmas terdekat menggunakan Google Maps |
 
-## Arsitektur: MVVM (Model-View-ViewModel)
+---
 
-Proyek ini mengimplementasikan pola **MVVM** dengan struktur folder sebagai berikut:
+## Implementasi Arsitektur MVVM
 
+Proyek ini menggunakan pola arsitektur MVVM (Model-View-ViewModel) untuk memisahkan tampilan, logika bisnis, dan pengelolaan data.
+
+### Struktur Folder
+
+```text
 lib/
-├── model/           # Data layer: entitas, repository, API/service
+├── models/
 │   ├── user_model.dart
 │   ├── article_model.dart
 │   ├── consultation_model.dart
 │   └── health_record_model.dart
 │
-├── view/            # UI layer: widget & halaman Flutter
+├── services/
+│   ├── auth_service.dart
+│   ├── firestore_service.dart
+│   └── location_service.dart
+│
+├── viewmodels/
+│   ├── auth_viewmodel.dart
+│   ├── education_viewmodel.dart
+│   ├── consultation_viewmodel.dart
+│   ├── history_viewmodel.dart
+│   └── location_viewmodel.dart
+│
+├── views/
 │   ├── auth/
 │   │   ├── login_view.dart
 │   │   └── register_view.dart
@@ -50,57 +82,77 @@ lib/
 │   └── location/
 │       └── location_view.dart
 │
-├── viewmodel/       # Business logic layer: state management & interaksi data
-│   ├── auth_viewmodel.dart
-│   ├── education_viewmodel.dart
-│   ├── consultation_viewmodel.dart
-│   ├── history_viewmodel.dart
-│   └── location_viewmodel.dart
-│
 └── main.dart
 ```
 
-### Penjelasan Layer MVVM
+### Diagram MVVM
 
-- **Model**: Bertanggung jawab atas definisi struktur data dan komunikasi dengan sumber data (Firebase Firestore, REST API).
-- **View**: Menampilkan UI kepada pengguna dan meneruskan aksi pengguna ke ViewModel. View tidak mengandung logika bisnis.
-- **ViewModel**: Menjadi jembatan antara Model dan View. Mengelola state menggunakan `Provider` dan memproses logika bisnis sebelum data ditampilkan ke View.
+```text
+        View
+          │
+          ▼
+     ViewModel
+          │
+          ▼
+       Model
+          │
+          ▼
+ Firebase / API / Database
+```
+
+### Penjelasan Layer
+
+#### Model
+Berisi representasi data aplikasi dan komunikasi dengan sumber data seperti Firebase Firestore, REST API, maupun database lokal.
+
+#### View
+Berisi seluruh tampilan antarmuka pengguna (UI). View hanya bertugas menampilkan data dan menerima interaksi pengguna.
+
+#### ViewModel
+Menghubungkan View dengan Model. ViewModel bertanggung jawab mengelola state aplikasi menggunakan Provider serta memproses logika bisnis.
+
+---
+
+## Hasil Refactoring MVVM
+
+Setelah implementasi MVVM, diperoleh beberapa keuntungan:
+
+- Pemisahan yang jelas antara UI dan business logic.
+- Struktur proyek lebih rapi dan mudah dipelihara.
+- State management lebih terorganisir menggunakan Provider.
+- Memudahkan pengembangan fitur baru.
+- Mengurangi duplikasi kode.
+- Meningkatkan scalability aplikasi.
+
+### Perbandingan Sebelum dan Sesudah MVVM
+
+| Sebelum MVVM | Sesudah MVVM |
+|--------------|--------------|
+| UI dan business logic bercampur | UI dan business logic terpisah |
+| Sulit melakukan maintenance | Lebih mudah dikembangkan |
+| Struktur kode kurang terorganisir | Struktur lebih modular |
+| Sulit melakukan testing | Lebih mudah diuji dan dipelihara |
+
+---
 
 ## Tech Stack
 
 | Kategori | Teknologi |
-|----------|-----------|
-| **Framework** | Flutter 3.x (Dart) |
-| **State Management** | Provider |
-| **Backend / BaaS** | Firebase (Authentication, Firestore, Storage) |
-| **Maps & Lokasi** | Google Maps Flutter Plugin |
-| **HTTP Client** | `http` / `dio` package |
-| **Arsitektur** | MVVM (Model-View-ViewModel) |
-| **Version Control** | Git & GitHub |
+|-----------|------------|
+| Framework | Flutter 3.x |
+| Bahasa Pemrograman | Dart |
+| State Management | Provider |
+| Backend as a Service | Firebase |
+| Authentication | Firebase Authentication |
+| Database | Cloud Firestore |
+| Storage | Firebase Storage |
+| Maps | Google Maps Flutter |
+| HTTP Client | Dio / HTTP |
+| Arsitektur | MVVM |
+| Version Control | Git & GitHub |
 
-## Cara Menjalankan Proyek
+---
 
-### Prasyarat
-- Flutter SDK `>=3.0.0`
-- Dart SDK `>=3.0.0`
-- Android Studio / VS Code
-- Akun Firebase (sudah dikonfigurasi)
-
-### Langkah Instalasi
-
-```bash
-# 1. Clone repository
-git clone https://github.com/richechab/edu-tb-mvvm.git
-
-# 2. Masuk ke direktori proyek
-cd edu-tb-mvvm
-
-# 3. Install dependencies
-flutter pub get
-
-# 4. Jalankan aplikasi
-flutter run
-```
 ## Dependencies Utama
 
 ```yaml
@@ -117,10 +169,115 @@ dependencies:
   dio: ^5.4.1
   shared_preferences: ^2.2.2
 ```
+
+## Cara Menjalankan Proyek
+
+### Prasyarat
+
+- Flutter SDK >= 3.0.0
+- Dart SDK >= 3.0.0
+- Android Studio atau VS Code
+- Firebase Project yang telah dikonfigurasi
+
+### Instalasi
+
+```bash
+# Clone repository
+git clone https://github.com/richechab/edu-tb-mvvm.git
+
+# Masuk ke folder project
+cd edu-tb-mvvm
+
+# Install dependency
+flutter pub get
+
+# Jalankan aplikasi
+flutter run
+```
+
+---
+
+## Konfigurasi Firebase
+
+1. Buat project baru pada Firebase Console.
+2. Tambahkan aplikasi Android atau iOS.
+3. Unduh file konfigurasi Firebase:
+   - `google-services.json` (Android)
+   - `GoogleService-Info.plist` (iOS)
+4. Tempatkan file pada direktori yang sesuai.
+5. Jalankan konfigurasi FlutterFire:
+
+```bash
+flutterfire configure
+```
+
+6. Jalankan aplikasi:
+
+```bash
+flutter run
+```
+
+---
+
+## Tampilan Aplikasi
+
+Simpan screenshot aplikasi pada folder:
+
+```text
+screenshots/
+├── login.png
+├── register.png
+├── home.png
+├── education.png
+├── consultation.png
+├── history.png
+└── maps.png
+```
+
+Kemudian tampilkan pada README:
+
+```md
+## Screenshot
+
+### Login
+![Login](screenshots/login.png)
+
+### Home
+![Home](screenshots/home.png)
+
+### Edukasi TB
+![Education](screenshots/education.png)
+
+### Konsultasi
+![Consultation](screenshots/consultation.png)
+
+### Lokasi Fasilitas Kesehatan
+![Maps](screenshots/maps.png)
+```
+
+---
+
 ## Riwayat Pengembangan
 
 | Tahap | Deskripsi | Status |
-|-------|-----------|--------|
-| Tahap 1 | User Interface (UI) & Model Preparation | ✓ Selesai |
-| Tahap 2 | UI Navigation | ✓ Selesai |
-| Tahap 3 | Source Code Refactoring (MVVM) | ✓ Selesai |
+|--------|------------|--------|
+| Tahap 1 | User Interface (UI) dan Model Preparation | ✅ Selesai |
+| Tahap 2 | Navigation dan Integrasi Halaman | ✅ Selesai |
+| Tahap 3 | Refactoring Menggunakan MVVM | ✅ Selesai |
+| Tahap 4 | Integrasi Firebase dan Penyempurnaan Fitur | ✅ Selesai |
+
+---
+
+## Repository
+
+GitHub Repository:
+
+https://github.com/richechab/edu-tb-mvvm
+
+---
+
+## License
+
+Project ini dikembangkan untuk keperluan pembelajaran dan tugas mata kuliah Pemrograman Mobile.
+
+© 2025 Riche Chalimul Habibah
