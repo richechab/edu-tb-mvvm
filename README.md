@@ -234,24 +234,6 @@ screenshots/
 └── maps.png
 ```
 ```md
-## Screenshot
-
-### Login
-![Login](screenshots/login.png)
-
-### Home
-![Home](screenshots/home.png)
-
-### Edukasi TB
-![Education](screenshots/education.png)
-
-### Konsultasi
-![Consultation](screenshots/consultation.png)
-
-### Lokasi Fasilitas Kesehatan
-![Maps](screenshots/maps.png)
-```
-
 ---
 
 ## Riwayat Pengembangan
