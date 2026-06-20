@@ -233,4 +233,3 @@ screenshots/
 ├── history.png
 └── maps.png
 ```
-```md
