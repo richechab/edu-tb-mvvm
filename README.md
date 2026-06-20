@@ -2,24 +2,17 @@
 EduTB is a Flutter-based application for tuberculosis (TB) education and early detection. This project implements the MVVM (Model-View-ViewModel) architecture pattern to improve code maintainability, scalability, and separation of concerns. Features include authentication, TB education, consultation, medical history, health facility location.
 # EduTB — Aplikasi Edukasi & Deteksi Dini Tuberkulosis
 
----
-
 ## Informasi
 
 | Nama | NPM |
 |------|-----|
 | Riche Chalimul H.| 23082010042 |
 
-
----
-
 ## Deskripsi Aplikasi
 
 **EduTB** adalah aplikasi mobile berbasis Flutter yang dirancang untuk membantu masyarakat dalam memperoleh edukasi mengenai penyakit **Tuberkulosis (TB)** serta melakukan **deteksi dini** gejala TB secara mandiri. Aplikasi ini ditujukan sebagai media informasi kesehatan yang mudah diakses, sehingga pengguna dapat memahami gejala, pencegahan, dan penanganan TB dengan lebih baik.
 
 Pada tahap ini, proyek telah direfaktor menggunakan **pola arsitektur MVVM (Model-View-ViewModel)** untuk meningkatkan keterbacaan kode, skalabilitas, serta pemisahan logika bisnis dari tampilan antarmuka.
-
----
 
 ## Fitur Utama
 
@@ -31,13 +24,10 @@ Pada tahap ini, proyek telah direfaktor menggunakan **pola arsitektur MVVM (Mode
 | 4 | **Riwayat Kesehatan** | Pencatatan dan riwayat hasil pemeriksaan atau konsultasi pengguna |
 | 5 | **Lokasi Fasilitas Kesehatan** | Peta lokasi puskesmas dan rumah sakit terdekat yang menangani TB |
 
----
-
 ## Arsitektur: MVVM (Model-View-ViewModel)
 
 Proyek ini mengimplementasikan pola **MVVM** dengan struktur folder sebagai berikut:
 
-```
 lib/
 ├── model/           # Data layer: entitas, repository, API/service
 │   ├── user_model.dart
@@ -76,8 +66,6 @@ lib/
 - **View**: Menampilkan UI kepada pengguna dan meneruskan aksi pengguna ke ViewModel. View tidak mengandung logika bisnis.
 - **ViewModel**: Menjadi jembatan antara Model dan View. Mengelola state menggunakan `Provider` dan memproses logika bisnis sebelum data ditampilkan ke View.
 
----
-
 ## Tech Stack
 
 | Kategori | Teknologi |
@@ -89,8 +77,6 @@ lib/
 | **HTTP Client** | `http` / `dio` package |
 | **Arsitektur** | MVVM (Model-View-ViewModel) |
 | **Version Control** | Git & GitHub |
-
----
 
 ## Cara Menjalankan Proyek
 
@@ -115,9 +101,6 @@ flutter pub get
 # 4. Jalankan aplikasi
 flutter run
 ```
-
----
-
 ## Dependencies Utama
 
 ```yaml
@@ -134,9 +117,6 @@ dependencies:
   dio: ^5.4.1
   shared_preferences: ^2.2.2
 ```
-
----
-
 ## Riwayat Pengembangan
 
 | Tahap | Deskripsi | Status |
@@ -144,7 +124,3 @@ dependencies:
 | Tahap 1 | User Interface (UI) & Model Preparation | ✓ Selesai |
 | Tahap 2 | UI Navigation | ✓ Selesai |
 | Tahap 3 | Source Code Refactoring (MVVM) | ✓ Selesai |
-
----
-
-.
